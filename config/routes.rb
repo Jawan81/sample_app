@@ -1,9 +1,15 @@
 SampleApp::Application.routes.draw do
+  get "users/new"
+
   #get "static_pages/home"
   root to: 'static_pages#home' # creates variable root_path
+  
+  match '/signup',  to: 'users#new' # creates variable signup_path
+  
   match '/help',    to: 'static_pages#help'# creates variable help_path
   match '/about',   to: 'static_pages#about'# creates variable about_path
   match '/contact', to: 'static_pages#contact' # creates variable contact_path
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
